@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sewa Supir Mobil Kecil - Matik & Manual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 5px 0 0;
+    }
+    section {
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #27ae60;
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form input, form textarea, form select {
+      margin-bottom: 12px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background: #27ae60;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background: #219150;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Sewa Supir Mobil Kecil</h1>
+  <p>Mobil Matik & Manual • Dalam & Luar Kota • Sabtu & Minggu</p>
+</header>
+
+<section>
+  <div class="card">
+    <h2>Kenapa Pilih Kami?</h2>
+    <ul>
+      <li>Supir berpengalaman & ramah</li>
+      <li>Tersedia mobil matik maupun manual</li>
+      <li>Siap antar jemput dalam & luar kota</li>
+      <li>Khusus Sabtu & Minggu</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Pesan Sekarang</h2>
+    <form id="orderForm">
+      <input type="text" id="nama" placeholder="Nama Pemesan" required>
+      <input type="text" id="alamat" placeholder="Alamat / ShareLok Pemesan" required>
+      <input type="date" id="tanggal" required>
+      <input type="time" id="jam" required>
+      <input type="text" id="tujuan" placeholder="Tujuan Perjalanan" required>
+      <button type="submit">Pesan via WhatsApp</button>
+    </form>
+  </div>
+
+  <div class="card" style="text-align: center;">
+    <a class="btn" href="https://wa.me/6289635620165" target="_blank">Chat WhatsApp</a>
+  </div>
+</section>
+
+<script>
+  document.getElementById('orderForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    let nama = document.getElementById('nama').value;
+    let alamat = document.getElementById('alamat').value;
+    let tanggal = document.getElementById('tanggal').value;
+    let jam = document.getElementById('jam').value;
+    let tujuan = document.getElementById('tujuan').value;
+    
+    let pesan = `Halo, saya ingin pesan supir:\n\nNama: ${nama}\nAlamat: ${alamat}\nTanggal: ${tanggal}\nJam: ${jam}\nTujuan: ${tujuan}`;
+    
+    let url = "https://wa.me/6289635620165?text=" + encodeURIComponent(pesan);
+    window.open(url, '_blank');
+  });
+</script>
+
+</body>
+</html>
